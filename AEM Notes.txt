@@ -1,0 +1,188 @@
+
+YouTube 
+
+https://www.youtube.com/playlist?list=PLKsCe3_0gbqqPocejURxxsmiP-wMK6JW3
+https://www.youtube.com/channel/UCXUMchScrOIZYUa9_6wmFTg/playlists
+
+
+Github https://github.com/sunil-bhaskaran/AEMSampleCodess
+Blog http://blogs.adobe.com/sunil/
+
+Installing AEM on Windows.
+
+1. Prerequisites
+Download Java 7 or 8 and install on your machine.
+Maven
+
+2. Set up
+JAR file named cq-quickstart-5.6.jar
+Rename quickstart file to cq-author-4502.jar
+Double click the jar file to open up the author instance.
+
+* Author instance
+An Author instance will allow you to Edit, Manage and Mentain content of your site. 
+An authors in your orgnisation create or update the content.
+
+Rename quickstart file to cq-publish-4503.jar
+Double click the jar file to open up the publish instance.
+
+* Publish instance 
+A publish instance is how your site will look and appear to your audiences. 
+This is essetially what user would see if they typed your URL into their browser.
+
+AEM Notes
+
+Experience Manager Platform
+
+The platform of Adobe Experience Manager 6.2 build on top of updated versions of the OSGi-based framework (Apache Sling and Apache Felix) and the Java Content Repository: Apache Jackrabbit Oak 1.4.1.
+The Quickstart uses the Eclipse Jetty 9.2.14 as servlet engine.
+
+
+
+
+
+01. AEM Authors, Templates, Components
+
+* A template defines the basic layout of your page.
+* A component is primarily a kind of information which is displayed in a specific manner.
+* Authors create and update content.
+* You use components to add your content. Content could be a text, image, table, slide show etc.
+* When you create a web page you create it based on a perticular template, which will provide you a kind of layout.
+
+
+02. Introduction to AEM developers and CRXDE Lite
+
+* Developers create templates and components.
+* A template defines the layout of your web page.
+* Authors select a specific template before they create a page.
+* A component allows to display a specific information in a certain format.
+* Site admin a tool to create web pages.
+
+
+* CRDX Lite is developers web console.
+* Content is the folder where all user generated pages exist.
+* Apps is the folder where you create templates and components, associatable with your project.
+* CQ TEMPLATE is the property associated with all templates.
+* sling:resourceType property of a template points the script that is used to render the layout.
+* JSP is a template language in which all the templates are crated.
+* All the existing templates are created using JSP. In AEM's context it is called templating language.
+* In AEM 6.0 relese Adobe introduces a new templating language called Sightly.
+* Sightly is HTML5 and very easy to use.
+ 
+
+03. Create your first AEM template
+
+* Choosing the right template is the fundamental part of page creation.
+
+
+07. Summary_ The first step of developing template in AEM
+
+* AEM creates webpages.
+they use templates which provides you the layouts of the web pages.
+they use components to display information to be displayed on the pages.
+Developers ceates templates and components based on the various requirements of the orgnisations.
+
+* Site Admin 
+- Used by authors to web pages
+
+* CRXDE Lite 
+- Used by developrs to expolore crxde repository ie. OAK repository. 
+- This web console is used to create templates and components.
+
+CRXDE Lite Folders
+1. content folder 
+- All pages we create goes here
+
+2. apps folder 
+- Developers create their company pages here.
+- aem-company folder
+it contains two folders viz, conponents and templates folder. They are primarily created for this templates and components respectively.
+
+template has a resourceType property which points to the component in the components folder. 
+This component is called page coponent. 
+It is used to create a layout of the page.
+This page component has resourceSuperType property which points to page componet inside libs/foundation/components/page
+We have created a body.html which is called the rendering script in HTML format because we have used slightly which is much similar to HTML5
+We haved pasted the HTML content diirecty in to the content.
+We have added "data-sly-resource" tag to include "parsys" conponent.
+"iparsys" component is used for sidebar.
+The "parsys" component helps to drag and drop components while authoring the web page.
+We placed css inside etc/design folder 
+
+For editing
+1. Authors should go to classic UI first
+2. From the side kick they need to go to the design mode
+3. Click edit 
+4. Enable the components that they want to use 
+5. After they do that they would be able to drag and drop components 
+
+
+3. etc/designs folder
+- Developers stores a design pages here.
+
+
+
+* CRX Package manager 
+- Used by developers to share code they develop
+
+
+
+08. Create your sightly component
+
+09. AEM dialogs
+
+* AEM dialogs are used to enter information to a component 
+
+
+
+
+* Bundles helps to modularize java development using the open source getway initiative OSGI framework.
+* A bundle is essentially a jar file that you deploye in the apache felix console.
+* Felix console is sub OSGI container
+* To make it simpler, to accomplish a complex task you can deply a bundle in the felix console that runs with AEM and the awaits the services offered by bundle.
+
+
+*Command to create and AEM project using a Maven Architect
+
+mvn archetype:generate -DarchetypeRepository=http://repo.adobe.com/nexus/content/groups/public/ -DarchetypeGroupId=com.day.jcr.vault -DarchetypeArtifactId=multimodule-content-package-archetype -DarchetypeVersion=1.0.2 -DgroupId=aem-company -DartifactId=myproject -Dversion=1.0-SNAPSHOT -Dpackage=com.aemcompany.myproject -DappsFolderName=myproject -DartifactName="My Project" -DcqVersion="6.0" -DpackageGroup="AEM Company"
+
+
+* Architect is a project templating toolkit, basically it creates a sample project from which you can start your work.
+* After running the above command a project structure is created.
+* Now To deply this project to felix console go to project directory 
+
+$ cd myproject
+
+and run following command
+
+$ mvn -PautoInstallPackage install
+
+
+* Then login to system console and locate the bundle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
